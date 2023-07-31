@@ -29,7 +29,8 @@ class SessionsController {
 
     return response.json({
       status: "sucesssful",
-      message: "Usuário Autenticado com Sucesso"
+      message: "Usuário Autenticado com Sucesso",
+      token
     })
   }
 }
