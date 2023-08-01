@@ -1,12 +1,15 @@
 require("express-async-errors")
 const express = require("express")
 const routes = require("./routes")
+
+const uploadConfig = require("./configs/upload")
 const AppError = require("./Utils/AppError")
 const sqliteConnection = require("./database/sqlite")
 
 
 const app = express()
 app.use(express.json())
+app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER))
 sqliteConnection()
 app.use(routes)
 

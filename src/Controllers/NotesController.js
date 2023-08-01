@@ -6,7 +6,7 @@ class NotesController{
   const { title, description, tags, links } = request.body
   const user_id = request.user.id
 
-  const user = await knex("users").select("id").where({ id: user_id}).first()
+  const user = await knex("users").select("id").where({ id: user_id }).first()
 
   if(!user){
     throw new AppError("Usuário não encontrado.")
