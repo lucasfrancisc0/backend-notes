@@ -104,8 +104,9 @@ class NotesController{
     .select("*")
     .where({ user_id })
     .whereLike("title", `%${title}%`)
+    console.log(searchNoteTitle)
 
-    note = searchNoteTitle ?? "Não existem notas com este título."
+    note = searchNoteTitle.length > 0 ? searchNoteTitle : "Não existem notas cadastradas com este título."
   }
 
   if(tags){

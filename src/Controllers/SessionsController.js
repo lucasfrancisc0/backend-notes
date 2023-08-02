@@ -27,11 +27,7 @@ class SessionsController {
       expiresIn
     })
 
-    return response.json({
-      status: "sucesssful",
-      message: "Usuário Autenticado com Sucesso",
-      token
-    })
+    return response.json({ user, token })
   }
 }
 
